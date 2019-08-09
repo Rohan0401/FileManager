@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'webpack_loader',
     'rest_framework',
     'filemanager',
+    'neural_translation',  # Adding Neural Translation App
+
 ]
 
 MIDDLEWARE = [
