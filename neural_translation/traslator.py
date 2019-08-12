@@ -16,6 +16,7 @@ import time
 
 
 class DataProcessor:
+  """Convert the input data path to the tensor variables"""
 
   def __init__(self, path, num_examples):
     self.path = path
@@ -39,6 +40,7 @@ class DataProcessor:
 
 
 class CreateDataset:
+  """Create a dataset with the tf.data api for tranlator"""
 
   def __init__(self, input_tensor_train, target_tensor_train, buffer_size, batch_size, steps_per_epoch, embedding_dim,
                units, vocal_input_size, vocab_tar_size):
@@ -224,7 +226,7 @@ class Translator:
                                             total_loss / steps_per_epoch))
         print('Time taken for 1 epoch {} sec\n'.format(time.time() - start))
 
-  def evaluate(self, sentence):
+  def evaluate(self, sentence, max_length_targ, max_length_inp, inp_lang, targ_lang,  units):
     attention_plot = np.zeros((max_length_targ, max_length_inp))
 
     sentence = preprocess_sentence(sentence)
