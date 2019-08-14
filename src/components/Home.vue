@@ -28,8 +28,22 @@
           </b-card>
         </b-col>
       </b-row>
-
-      <hr />
+    
+    <!-- PART-4: TRANSLATE FILE(S) -->
+    <b-card bg-variant="light">
+      <b-row>
+        <b-col col="4"><b-button variant="danger" @click="deleteFile()">
+          Translate &nbsp;&nbsp;<font-awesome-icon icon="trash-alt" /></b-button>
+        </b-col>
+        <b-col cols="4" md="auto">
+          <b-card bg-variant="light" v-if="status">
+            <b-card-text style="margin-right: 50px;">
+              <strong>{{ selectedDataSizes.length }}</strong> File(s) selected</b-card-text>
+            <b-card-text>Total size: <strong>{{ selectedDataTotal }}</strong></b-card-text>
+          </b-card>
+        </b-col>
+      </b-row>
+    <hr />
 
       <!-- PART-1: LIST FILES -->
       <ag-grid-vue style="width: 100%; height: 500px; border: 1px solid #e7e9ea; border-radius: 4px;"
@@ -215,6 +229,18 @@ export default {
         this.result_id = result_id
         this.mShow = true
         this.modal = true
+      }
+    },
+    translateFile(){
+      const selectedNodes = this.gridApi.getSelectedNodes()
+      if (selectedNodes.length > 0){
+        const selectedData = selectedNodes.map( node => node.data );
+        const result_id = selectedData.map( node => node.file_id)
+        console.log(result_id)
+        this.result_id = result_id
+        this.mShow = true
+        this.modal = true
+
       }
     },
 

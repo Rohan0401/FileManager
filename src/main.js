@@ -6,7 +6,7 @@ import BootstrapVue from 'bootstrap-vue'
 import store from './store'
 
 Vue.use(BootstrapVue)
-
+Vue.config.devtools = true
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
