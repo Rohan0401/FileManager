@@ -27,13 +27,8 @@
             <b-card-text>Total size: <strong>{{ selectedDataTotal }}</strong></b-card-text>
           </b-card>
         </b-col>
-      </b-row>
-    
-    <!-- PART-4: TRANSLATE FILE(S) -->
-    <b-card bg-variant="light">
-      <b-row>
-        <b-col col="4"><b-button variant="danger" @click="deleteFile()">
-          Translate &nbsp;&nbsp;<font-awesome-icon icon="trash-alt" /></b-button>
+        <b-col col="4"><b-button variant="info" @click="deleteFile()">
+          Translate &nbsp;&nbsp;<font-awesome-icon icon="language" /></b-button>
         </b-col>
         <b-col cols="4" md="auto">
           <b-card bg-variant="light" v-if="status">
@@ -42,7 +37,25 @@
             <b-card-text>Total size: <strong>{{ selectedDataTotal }}</strong></b-card-text>
           </b-card>
         </b-col>
+      
       </b-row>
+      
+        
+    
+    <!-- PART-4: TRANSLATE FILE(S) -->
+    <!-- <b-card bg-variant="light">
+      <b-row>
+        <b-col col="4"><b-button variant="danger" @click="deleteFile()">
+          Translate &nbsp;&nbsp;<font-awesome-icon icon="language" /></b-button>
+        </b-col>
+        <b-col cols="4" md="auto">
+          <b-card bg-variant="light" v-if="status">
+            <b-card-text style="margin-right: 50px;">
+              <strong>{{ selectedDataSizes.length }}</strong> File(s) selected</b-card-text>
+            <b-card-text>Total size: <strong>{{ selectedDataTotal }}</strong></b-card-text>
+          </b-card>
+        </b-col>
+      </b-row> -->
     <hr />
 
       <!-- PART-1: LIST FILES -->
